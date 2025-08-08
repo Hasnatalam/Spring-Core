@@ -1,0 +1,17 @@
+package com.hasnat.SpringCoreXml_Annotation;
+
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.hasnat.service.PrintTime;
+
+/**
+ * Hello world!
+ */
+public class App {
+    public static void main(String[] args) {
+    	ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("com/hasnat/config/applicationConfig.xml");
+    	PrintTime pt = ctx.getBean("pt",PrintTime.class);
+    	pt.printTime();
+    	ctx.close();
+    }
+}

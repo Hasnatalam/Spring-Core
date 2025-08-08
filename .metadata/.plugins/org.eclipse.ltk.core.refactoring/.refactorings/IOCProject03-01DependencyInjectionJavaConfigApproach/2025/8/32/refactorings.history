@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;AppConfig.java&apos; to &apos;SpringCoreJavaConfig/src/main/java/com.hasnat.config&apos;&#x0D;&#x0A;- Original project: &apos;IOCProject03-01DependencyInjectionJavaConfigApproach&apos;&#x0D;&#x0A;- Destination element: &apos;SpringCoreJavaConfig/src/main/java/com.hasnat.config&apos;&#x0D;&#x0A;- Original element: &apos;com.hasnat.config.AppConfig.java&apos;" description="Copy compilation unit" destination="=SpringCoreJavaConfig/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.hasnat.config" element1="/src&lt;com.hasnat.config{AppConfig.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1754676613489" units="1" version="1.0"/>
+</session>

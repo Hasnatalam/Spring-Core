@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+           http://www.springframework.org/schema/beans 
+           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- ====================== DEPENDENT BEANS ====================== -->
+
+    <!-- Create a bean of LocalTime using the static factory method now() -->
+    <bean id="ltime" class="java.time.LocalTime" factory-method="now"/>
+
+    <!-- Create a bean of LocalDate using the static factory method now() -->
+    <bean id="ldate" class="java.time.LocalDate" factory-method="now"/>
+
+    <!-- Create a LocalTime bean with specific time 11:20 using static factory method of() -->
+    <bean id="ltime1" class="java.time.LocalTime" factory-method="of">
+        <constructor-arg value="11"/>  <!-- hour -->
+        <constructor-arg value="20"/>  <!-- minute -->
+    </bean>
+
+    <!-- Create a LocalDate bean with specific date 2020-12-13 using static factory method of() -->
+    <bean id="ldate1" class="java.time.LocalDate" factory-method="of">
+        <constructor-arg value="2020"/>  <!-- year -->
+        <constructor-arg value="12"/>    <!-- month -->
+        <constructor-arg value="13"/>    <!-- day -->
+    </bean>
+
+    <!-- ====================== TARGET BEAN (MAIN BEAN) ====================== -->
+
+    <!-- WishMassage bean depends on LocalDate and LocalTime -->
+    <bean id="wmg" class="com.hasnat.service.WishMassage">
+
+        <!-- Setter injection -->
+        <property name="lt" ref="ltime1"/> <!-- Sets LocalTime using setter -->
+        <property name="ld" ref="ldate1"/> <!-- Sets LocalDate using setter -->
+
+        <!-- Constructor injection -->
+        <constructor-arg name="lt" ref="ltime"/> <!-- LocalTime constructor arg -->
+        <constructor-arg name="ld" ref="ldate"/> <!-- LocalDate constructor arg -->
+
+        <!-- Note: Both constructor and setter are being used together -->
+    </bean>
+
+</beans>

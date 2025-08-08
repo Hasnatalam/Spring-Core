@@ -1,0 +1,39 @@
+package com.hasnat.service;
+
+import java.time.LocalDate;
+import java.time.LocalTime;
+
+public class WishMassage {
+	
+	private LocalTime lt;
+	private LocalDate ld;
+	
+	public WishMassage (LocalTime lt) {
+		this.lt= lt;
+	}
+	
+	public WishMassage(LocalTime lt, LocalDate ld) {
+		super();
+		this.lt = lt;
+		this.ld = ld;
+	}
+		
+	public void wish() {
+		System.out.println("Welcome to xml config Example");
+		System.out.println(lt);
+		System.out.println(ld);
+	}
+
+
+	public void setLt(LocalTime lt) {
+		this.lt = lt;
+	}
+
+	public void setLd(LocalDate ld) {
+		this.ld = ld;
+	}
+	
+	
+	
+	
+}

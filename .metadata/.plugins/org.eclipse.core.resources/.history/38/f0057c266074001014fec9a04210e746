@@ -1,0 +1,19 @@
+package com.hasnat.SpringCoreXml;
+
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.hasnat.service.WishMassage;
+
+/**
+ * Hello world!
+ */
+public class App {
+    public static void main(String[] args) {
+    	ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("com/hasnat/config/applicationConfig.xml");
+    	Object obj = ctx.getBean("wmg");
+    	WishMassage wishMassage = (WishMassage) obj;
+    	
+    	wishMassage.wish();
+    	
+    }
+}

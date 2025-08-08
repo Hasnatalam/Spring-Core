@@ -1,0 +1,41 @@
+package com.hasnat.service;
+
+import java.time.LocalDate;
+import java.time.LocalTime;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+
+public class PrintTime {
+	
+	private LocalTime lt;
+	private LocalDate ld;
+	
+	@Autowired
+    @Qualifier("ltime") // Specify the exact bean to inject
+    LocalTime lt1;
+	LocalTime lt2;
+    LocalTime lt3;
+    LocalTime lt4;
+
+    @Autowired
+    public PrintTime(@Qualifier("ltime1") LocalTime lt2) {
+        this.lt2 = lt2;
+    }
+    @Autowired
+    @Qualifier("ltime2") 
+	public void setLt3(LocalTime lt3) {
+		this.lt3 = lt3;
+	}	
+	public void printTime() {
+		
+		System.out.println(lt1);
+		System.out.println(lt2);
+		System.out.println(lt3);
+		System.out.println(lt4);
+	}
+
+
+	
+	
+}
